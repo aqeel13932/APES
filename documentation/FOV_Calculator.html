@@ -1,0 +1,105 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module FOV_Calculator</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>FOV_Calculator</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/aqeel/Documents/APES/FOV_Calculator.py">/home/aqeel/Documents/APES/FOV_Calculator.py</a></font></td></tr></table>
+    <p><tt>FOV&nbsp;calculation&nbsp;for&nbsp;roguelike</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="FOV_Calculator.html#FOV_SC">FOV_SC</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FOV_SC">class <strong>FOV_SC</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>BASED&nbsp;ON&nbsp;:<a href="http://www.roguebasin.com/index.php?title=Python_shadowcasting_implementation">http://www.roguebasin.com/index.php?title=Python_shadowcasting_implementation</a>&nbsp;CODE<br>
+Updates:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Depending&nbsp;on&nbsp;Numpy&nbsp;array&nbsp;instead&nbsp;of&nbsp;string.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;No&nbsp;Display&nbsp;since&nbsp;it's&nbsp;return&nbsp;stored&nbsp;in&nbsp;light&nbsp;attribute'<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;data:&nbsp;numpy&nbsp;matrix&nbsp;contain&nbsp;the&nbsp;blocks(True&nbsp;or&nbsp;1)&nbsp;and&nbsp;Empty&nbsp;(False&nbsp;or&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;column:&nbsp;integer&nbsp;,&nbsp;max&nbsp;column&nbsp;number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;row:&nbsp;integer,&nbsp;max&nbsp;row&nbsp;number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;light:&nbsp;numpy&nbsp;matrix&nbsp;same&nbsp;size&nbsp;of&nbsp;map.&nbsp;contain&nbsp;the&nbsp;output&nbsp;where&nbsp;(1&nbsp;is&nbsp;visible&nbsp;and&nbsp;0&nbsp;is&nbsp;not&nbsp;visible)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="FOV_SC-__init__"><strong>__init__</strong></a>(self, map)</dt><dd><tt>initiate&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;from&nbsp;<a href="#FOV_SC">FOV_SC</a>&nbsp;class<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;map:numpy&nbsp;array&nbsp;where&nbsp;0&nbsp;represent&nbsp;clear&nbsp;,&nbsp;1&nbsp;represent&nbsp;block</tt></dd></dl>
+
+<dl><dt><a name="FOV_SC-blocked"><strong>blocked</strong></a>(self, x, y)</dt><dd><tt>Check&nbsp;if&nbsp;this&nbsp;coordinates&nbsp;refere&nbsp;to&nbsp;block<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;x:&nbsp;x&nbsp;coordinates&nbsp;(or&nbsp;columns)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;y:&nbsp;y&nbsp;coordinates&nbsp;(or&nbsp;Rows)<br>
+Return:&nbsp;Boolean&nbsp;value&nbsp;(True&nbsp;blocked&nbsp;,&nbsp;False:&nbsp;not)</tt></dd></dl>
+
+<dl><dt><a name="FOV_SC-do_fov"><strong>do_fov</strong></a>(self, x, y)</dt><dd><tt>Apply&nbsp;Shadow&nbsp;casting&nbsp;algorithm&nbsp;on&nbsp;the&nbsp;map&nbsp;from&nbsp;specific&nbsp;point&nbsp;prespective.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;x:&nbsp;x&nbsp;coordinates&nbsp;(or&nbsp;columns)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;y:&nbsp;y&nbsp;coordinates&nbsp;(or&nbsp;Rows)</tt></dd></dl>
+
+<dl><dt><a name="FOV_SC-lit"><strong>lit</strong></a>(self, x, y)</dt><dd><tt>Check&nbsp;if&nbsp;this&nbsp;coordinates&nbsp;are&nbsp;lighten&nbsp;or&nbsp;not.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;x:&nbsp;x&nbsp;coordinates&nbsp;(or&nbsp;columns)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;y:&nbsp;y&nbsp;coordinates&nbsp;(or&nbsp;Rows)<br>
+Return:&nbsp;Boolean&nbsp;value&nbsp;(True&nbsp;Lighten&nbsp;,&nbsp;False:&nbsp;not)</tt></dd></dl>
+
+<dl><dt><a name="FOV_SC-set_lit"><strong>set_lit</strong></a>(self, x, y)</dt><dd><tt>lighten&nbsp;current&nbsp;coordinates.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;x:&nbsp;x&nbsp;coordinates&nbsp;(or&nbsp;columns)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;y:&nbsp;y&nbsp;coordinates&nbsp;(or&nbsp;Rows)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>mult</strong> = [[1, 0, 0, -1, -1, 0, 0, 1], [0, 1, -1, 0, 0, -1, 1, 0], [0, 1, 1, 0, 0, -1, -1, 0], [1, 0, 0, 1, -1, 0, 0, -1]]</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-time"><strong>time</strong></a>(...)</dt><dd><tt><a href="#-time">time</a>()&nbsp;-&gt;&nbsp;floating&nbsp;point&nbsp;number<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;current&nbsp;time&nbsp;in&nbsp;seconds&nbsp;since&nbsp;the&nbsp;Epoch.<br>
+Fractions&nbsp;of&nbsp;a&nbsp;second&nbsp;may&nbsp;be&nbsp;present&nbsp;if&nbsp;the&nbsp;system&nbsp;clock&nbsp;provides&nbsp;them.</tt></dd></dl>
+</td></tr></table>
+</body></html>

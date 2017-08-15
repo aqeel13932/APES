@@ -1,0 +1,1000 @@
+    8  source activate fullfeatured
+    9  jupyter notebook
+   10  clear
+   11  exit
+   12  python ba3g.py 
+   13  exit
+   14  vim ba3g.py 
+   15  vim ba3i.py
+   16  cp ba3g.py ba3i.py 
+   17  vim ba3i.py 
+   18  vim ba3g.py 
+   19  vim ba3i.py 
+   20  vim ba3g.py 
+   21  cp ba3g.py ba3l.py
+   22  vim ba3l.py 
+   23  git status
+   24  git add ba3l.py 
+   25  git status
+   26  git commit -m 'problem ba3l sovled'
+   27  git push origin master 
+   28  vim ba3b.py 
+   29  clear
+   30  exit
+   31  python ba3g.py 
+   32  source activate fullfeatured
+   33  python ba3g.py 
+   34  python ba3f.py 
+   35  python ba3g.py 
+   36  clear
+   37  python ba3g.py 
+   38  cd 
+   39  cd Documents/3rdsemester/BIO/
+   40  ls
+   41  cd Rosalind
+   42  ls
+   43  cd ..
+   44  clear
+   45  cd bioinformatics-algorithms-coursera/
+   46  ls
+   47  cd ..
+   48  ls
+   49  cd Rosalind-TBT/
+   50  python ba3g.py 
+   51  clear
+   52  python ba3g.py 
+   53  cd ..
+   54  git clone https://github.com/jmthibault79/rosalind.git
+   55  clear
+   56  cd Rosalind-TBT/
+   57  python ba3i.py 
+   58  python ba3g.py 
+   59  git status
+   60  git add .
+   61  git status
+   62  git push origin master 
+   63  git commit -m 'updates'
+   64  git push origin master 
+   65  python ba3l.py 
+   66  clear
+   67  python ba3l.py 
+   68  cp ba3l.py ba3j.py
+   69  python ba3j.py 
+   70  exit
+   71  cd Documents/3rdsemester/BIO/
+   72  ls
+   73  cd Rosalind-TBT/
+   74  git status
+   75  git add .
+   76  git commit -m 'updates'
+   77  git push origin master 
+   78  clear
+   79  vim ba3j.py 
+   80  exit 
+   81  python ba3j.py 
+   82  exit
+   83  cd Documents/3rdsemester/ICNS/05\ -\ Neuron\ Networks/code/
+   84  ls
+   85  matplab
+   86  matlab
+   87  clear
+   88  git status
+   89  git add 05\ -\ Neuron\ Networks/
+   90  git status
+   91  git commit -m 'HW 05 initialization'
+   92  git push origin master 
+   93  clear
+   94  git status
+   95  git add 05\ -\ Neuron\ Networks/
+   96  git status
+   97  git commit -m 'E1,2,3 Finalized'
+   98  git push origin master 
+   99  clear
+  100  git status
+  101  git add 05\ -\ Neuron\ Networks/
+  102  git status
+  103  git commit -m 'E4 finalized'
+  104  git push origin master 
+  105  clear
+  106  exit
+  107  ssh aqeel@172.17.125.234 
+  108  ssh hpc_aqeel.juur.grid.eenet.ee
+  109  ssh hpc_aqeel@juur.grid.eenet.ee
+  110  clear
+  111  ssh-keygen -t rsa
+  112  man ssh
+  113  ssh hpc_aqeel@juur.grid.eenet.ee
+  114  ssh -i id_rsa hpc_aqeel@juur.grid.eenet.ee 
+  115  ls
+  116  clear
+  117  cd ~/
+  118  ls
+  119  ssh hpc_aqeel@juur.grid.eenet.ee
+  120  cd ~/
+  121  ls
+  122  cd .keras/
+  123  ls
+  124  vim keras.json
+  125  ssh hpc_aqeel@juur.grid.eenet.ee
+  126  git clone https://github.com/aqeel13932/DM
+  127  cd DM/HW10/
+  128  jupyter notebook
+  129  head -n -100 reviews_Apps_for_Android_5.json
+  130  exit
+  131  man head
+  132  head -n 10 reviews_Cell_Phones_and_Accessories_5.json
+  133  clear 
+  134  exit
+  135  ssh hpc_aqeel@juur.grid.eenetee
+  136  python
+  137  clear
+  138  ssh aqeel@172.17.125.234 
+  139  7za x pycharm-professional-2016.2.3.tar.gz 
+  140  clear
+  141  exit
+  142  7za x pycharm-professional-2016.2.3.tar 
+  143  exit
+  144  ls
+  145  cd pycharm-2016.2.3/
+  146  ls
+  147  cd bin/
+  148  ls
+  149  chmod +x pycharm
+  150  chmod +x pycharm.sh 
+  151  ./pycharm.sh 
+  152  exit
+  153  ls
+  154  vim columnclean.csv 
+  155  clear
+  156  ls
+  157  vim fulclean12.csv 
+  158  cleqr
+  159  clea
+  160  clear
+  161  vim fulclean12.csv 
+  162  clear
+  163  vim final.csv 
+  164  exit
+  165  git clone https://aqeel_13932@bitbucket.org/aqeel_13932/sentimental_classifications.git
+  166  ls
+  167  cd sentimental_classifications/
+  168  ls
+  169  vim arabicNoStopWords.csv 
+  170  vim onlyreviewsandstars.txt 
+  171  ls
+  172  exit
+  173  ls
+  174  vim final.csv 
+  175  vim Final_Cleaned.csv 
+  176  ssh aqeel@172.17.125.234 
+  177  clear
+  178  exit
+  179  ssh aqeel@172.17.125.234 
+  180  exit
+  181  python rest_server.py 
+  182  conda install -n fullfeatured web
+  183  conda install -n fullfeatured webpy
+  184  source activate fullfeatured
+  185  pip install web
+  186  pip install webpy
+  187  source deactivate
+  188  conda install -n fullfeatured web.py
+  189  source deactivate
+  190  source activate fullfeatured
+  191  pip install web.py
+  192  ls
+  193  python rest_server.py 
+  194  clear
+  195  python rest_server.py
+  196  clear
+  197  ls
+  198  cp rest_server.py ~/G48/
+  199  ls
+  200  cd ~/G48/
+  201  ls
+  202  clear
+  203  exit
+  204  info
+  205  clear
+  206  ifconfig
+  207  exit
+  208  ls
+  209  python NNClassifiyReviews.py 
+  210  source activate fullfeatured
+  211  python NNClassifiyReviews.py 
+  212  clear
+  213  python NNClassifiyReviews.py 
+  214  clear
+  215  python NNClassifiyReviews.py 
+  216  clear
+  217  ls
+  218  exit
+  219  vim Final_Cleaned.csv 
+  220  ls
+  221  source activate fullfeatured
+  222  ls
+  223  python MLP_Model.py 
+  224  cat Models/performance_count.txt 
+  225  ls
+  226  clear
+  227  exit
+  228  head -n 10 fulclean12.csv 
+  229  exit
+  230  head -n 1 hashes.txt 
+  231  head -n 10 hashes.txt 
+  232  head -n 10 database.sqlite 
+  233  head -n 10 FoodFacts.csv 
+  234  head -n 1 FoodFacts.csv 
+  235  head -n 2 FoodFacts.csv 
+  236  clear
+  237  exit
+  238  7za a final.zip Models/ fulclean12.csv FinalModel.py 
+  239  cd ~/Downloads/New\ Folder/
+  240  ls
+  241  7za x final.zip 
+  242  python
+  243  source activate fullfeatured
+  244  python
+  245  clear
+  246  7za a Final.zip *
+  247  exit
+  248  7za a Models/ FinalModel.py fulclean12.csv 
+  249  cd ~/Downloads/
+  250  cd New\ Folder/
+  251  ls
+  252  7za x fincl.zip 
+  253  ls
+  254  pwd
+  255  ls
+  256  clear
+  257  exit
+  258  scp aqeel@172.17.125.234:~/G48/Models/model_tfidf.h5 .
+  259  python rest_server.py 
+  260  source activate fullfeatured
+  261  python rest_server.py 
+  262  clear
+  263  python rest_server.py 
+  264  pip install flask
+  265  vim tmp.py
+  266  python tmpflask.py 
+  267  clear
+  268  python tmpflask.py 
+  269  clear
+  270  python tmpflask.py 
+  271  clear
+  272  python tmpflask.py 
+  273  clear
+  274  python tmpflask.py 
+  275  python tmpflask.py --host=0.0.0.0
+  276  clear
+  277  python tmpflask.py --host=0.0.0.0
+  278  clear
+  279  python tmpflask.py --host=0.0.0.0
+  280  clear
+  281  python tmpflask.py --host=0.0.0.0
+  282  clear
+  283  exit
+  284  head -n 1 reviews_Cell_Phones_and_Accessories_5.json
+  285  head -n 2 android_apps_.csv 
+  286  clear
+  287  ssh hpc_aqeel@juur.grid.eenet.ee
+  288  ls
+  289  scp Final_Cleaned.csv MLP_Model.py aqeel@172.17.125.234:~/G48
+  290  conda install -n fullfeatured h5py
+  291  ls
+  292  7za a fincl.zip Final_Cleaned.csv 
+  293  scp MLP_Model.py aqeel@172.17.125.234:~/G48
+  294  scp aqeel@172.17.125.234:~/G48/Models/model_tfidf.h5 .
+  295  conda install -n fullfeatured twython
+  296  source activate fullfeatured
+  297  pip install twython
+  298  ifconfig
+  299  clear
+  300  ifconfig
+  301  netstat -tupln | grep ':5000'
+  302  ifconfig
+  303  ping localhost
+  304  whoami 
+  305  who
+  306  whois
+  307  clear
+  308  ifconfig
+  309  python
+  310  exit
+  311  ssh aqeel@juur.grid.eenet.ee 
+  312  ssh hpc_aqeel@juur.grid.eenet.ee 
+  313  ping 172.17.36.131
+  314  cd ~/Downloads/
+  315  ls
+  316  head -n 10 en.openfoodfacts.org.products.csv 
+  317  head -n 1 en.openfoodfacts.org.products.csv 
+  318  exit
+  319  ls
+  320  cat ratings_Grocery_and_Gourmet_Food.csv 
+  321  clear
+  322  ls
+  323  exit
+  324  head -n 2 Home
+  325  mv Home Home.csv
+  326  exit
+  327  head -n 10 trainLabels.csv
+  328  ssh labash@rocket.hpc.ut.ee 
+  329  ssh hpc_aqeel@juur.grid.eenet.ee 
+  330  exit
+  331  scp train.csv.gz labash@rocket.hpc.ut.ee:~/
+  332  ls
+  333  man 7za
+  334  ls
+  335  7za l train.csv.gz 
+  336  ls -l
+  337  ls -l -h
+  338  ls
+  339  head -n 10 trainLabels.csv
+  340  ls
+  341  cd ..
+  342  ls
+  343  cd New\ Folder/
+  344  ls
+  345  head -n 1 reviews.csv
+  346  head -n 2 reviews.csv
+  347  clear
+  348  head -n 3 reviews.csv
+  349  head -n 2 reviews.csv
+  350  python
+  351  cd ~/G48/
+  352  ls
+  353  head -n 2 Food.csv 
+  354  clear
+  355  ls
+  356  7za a data.zip All.csv 
+  357  source activate fullfeatured
+  358  python clean.py 
+  359  vim All_clean.csv 
+  360  exit
+  361  7za a MLP_CAT.zip MLP_CAT.py All_clean.csv 
+  362  scp MLP_CAT.zip  aqeel@172.17.125.234:~/g48
+  363  scp MLP_CAT.zip  aqeel@172.17.125.234:~/G48
+  364  ls
+  365  7za x MLP_CAT.zip 
+  366  ssh aqeel@172.17.125.234
+  367  exit
+  368  ssh aqeel@172.17.125.234 
+  369  exit
+  370  scp aqeel@172.17.125.234:~/G48/Models1500 .
+  371  scp aqeel@172.17.125.234:~/G48/Models1500/model_freq.h5 .
+  372  python
+  373  source activate fullfeatured
+  374  python
+  375  clear
+  376  python
+  377  clear
+  378  ls
+  379  exit
+  380   source activate fullfeatured
+  381  ls
+  382  cd G48/
+  383  ls
+  384  jupyter notebook
+  385  exit
+  386  ssh aqeel@172.17.125.234 
+  387  exit
+  388  cd Documents/
+  389  ls
+  390  cd Internship/
+  391  ls
+  392  cd APES/
+  393  ls
+  394  git status
+  395  git add FinalVersion.ipynb Results_Analysis.ipynb Tester.ipynb duel.py output/features.results.out PD_Map.py Probability_Distribution_Analysis.ipynb duel_org.py exp_details.csv 
+  396  git status
+  397  git add output/*.ipynb
+  398  git status
+  399  git commit -m 'latest experiments'
+  400  git push origin master 
+  401  git push --help
+  402  ls
+  403  git status
+  404  git push -f origin master 
+  405  clear
+  406  exit
+  407  ssh hpc_aqeel@juur.grid.eenet.ee
+  408  clear
+  409  vim ~/.vimrc 
+  410  scp /home/aqeel/.vimrc hpc_aqeel@juur.grid.eenet.ee:~/
+  411  ssh hpc_aqeel@juur.grid.eenet.ee
+  412  exit
+  413  ssh hpc_aqeel@juur.grid.eenet.ee 
+  414  exit
+  415  ssh hpc_aqeel@juur.grid.eenet.ee 
+  416  exit
+  417  cd ..
+  418  ls
+  419  git status
+  420  git add Pupils_HW/
+  421  git commit -m 'initialization'
+  422  git push origin master 
+  423  clear
+  424  ssh hpc_aqeel@juur.grid.eenet.ee 
+  425  clear
+  426  ssh hpc_aqeel@juur.grid.eenet.ee 
+  427  git status
+  428  git add 06\ -\ Artificial\ Neural\ Networks/
+  429  git status
+  430  git commit -m '06 home work initialization'
+  431  git push origin master 
+  432  exit
+  433  ssh hpc_aqeel@juur.grid.eenet.ee 
+  434  git status
+  435  git add *
+  436  git status
+  437  git push origin master 
+  438  git commit -m 'HW 80% done'
+  439  git push origin master 
+  440  clear
+  441  git status
+  442  git add .
+  443  git status
+  444  git commit -m 'hw finalized'
+  445  git push origin master 
+  446  clear
+  447  git status
+  448  git add .
+  449  git commit -m 'hw finalized'
+  450  git push origin master 
+  451  clear
+  452  ssh labash@rocket.hpc.ut.ee 
+  453  ssh hpc_aqeel@juur.grid.eenet.ee 
+  454  exit
+  455  exit
+  456  source activate fullfeatured
+  457  jupyter notebook
+  458  exit
+  459  python
+  460  ssh hpc_aqeel@juur.grid.eenet.ee 
+  461  sudo dnf update
+  462  exit
+  463  ssh hpc_aqeel@juur.grid.eenet.ee
+  464  xit
+  465  exit
+  466  sudo dnf install octave-signal-1.3.2-2.fc24.x86_64 
+  467  sudo dnf install octave-devel-6\:4.0
+  468  sudo dnf install octave-devel
+  469  clear
+  470  ssh hpc_aqeel@juur.grid.eenet.ee
+  471  clear
+  472  ls
+  473  sudo dnf remove octave
+  474  clear
+  475  sudo dnf install octave
+  476  exit
+  477  sudo dnf install octave-nan
+  478  sudo dnf install octave-io
+  479  sudo dnf install octave-statistics-1.2.4-2.fc24.noarch 
+  480  sudo dnf install octave-devel
+  481  sudo dnf install gcc
+  482  sudo dnf install octave-signal-1.3.2-2.fc24.x86_64 
+  483  cd Documents/
+  484  cd 3rdsemester/ICNS/
+  485  git add 06\ -\ Artificial\ Neural\ Networks/
+  486  git status
+  487  git commit -m 'E1,E2 finalized'
+  488  git push origin master 
+  489  exit
+  490  git pull origin master 
+  491  git status
+  492  git add 06\ -\ Artificial\ Neural\ Networks/
+  493  git commit -m 'updates'
+  494  git push origin master 
+  495  exit
+  496  git status
+  497  git add 06\ -\ Artificial\ Neural\ Networks/
+  498  git commit -m 'HW finalized'
+  499  git push origin master 
+  500  exit
+  501  7za a submit.zip cns-ann.pdf perceptron.m rat_classification.m rat_regression.m sinusoid.m 
+  502  7za a submit.zip cns-ann.pdf perceptron.m rat_classification.m rat_regression.m sinusoid.m minimal_sinusoid.m 
+  503  exit
+  504  cd ..
+  505  ls
+  506  cd Internship/
+  507  ls
+  508  scp hpc_aqeel@juur.grid.eenet.ee:/storage/hpc_aqeel/E3_7.7z .
+  509  cd APES/output/
+  510  ls
+  511  7za x E3_7.7z 
+  512  exit
+  513  git pull origin master 
+  514  ؤمثشق
+  515  clear
+  516  ssh hpc_aqeel@juur.grid.eenet.ee 
+  517  exit
+  518  cd ..
+  519  vim duel.py 
+  520  exit
+  521  ssh hpc_aqeel@juur.grid.eenet.ee 
+  522  clear
+  523  ssh hpc_aqeel@juur.grid.eenet.ee
+  524  source activate fullfeatured
+  525  jupyter notebook
+  526  exit
+  527  ping www.google.com
+  528  clear
+  529  close
+  530  exit
+  531  ssh hpc_aqeel@juur.grid.eenet.ee 
+  532  exit
+  533  ssh hpc_aqeel@juur.grid.eenet.ee 
+  534  exit
+  535  7za a HW* Cheat\ sheet/
+  536  exit
+  537  7za a DM HW*
+  538  exit
+  539  7za a DS lab* HW*
+  540  exit
+  541  7za a DS lab* HW* Seminar\ 14/
+  542  exit
+  543  7za a SM.zip HW*
+  544  exit
+  545  7za a SM.zip HW* Exams/
+  546  exit
+  547  7za a SM HW* Exams/
+  548  exit
+  549  7za a all.7z *.7z
+  550  exit
+  551  ssh hpc_aqeel@juur.grid.eenet.ee 
+  552  exit
+  553  sudo dnf update
+  554  exit
+  555  ssh hpc_aqeel@juur.grid.eenet.ee 
+  556  clear
+  557  cd Documents/
+  558  cd 3rdsemester/MT/02Phrase/
+  559  ls
+  560  source activate fullfeatured
+  561  cd ..
+  562  jupyter notebook
+  563  exit
+  564  ssh hpc_aqeel@juur.grid.eenet.ee 
+  565  xi
+  566  exit
+  567  ssh hpc_aqeel@juur.grid.eenet.ee 
+  568  exit
+  569  sudo dnf install --nogpgcheck   http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+  570  sudo dnf update
+  571  wget http://git.io/vuLC7 -v -O fedora23_broadcom_wl_install.sh && sh .
+  572  ls
+  573  rm fedora23_broadcom_wl_install.sh 
+  574  clear
+  575  cd ~/
+  576  ls
+  577  cd Downloads/
+  578  ls
+  579  wget http://git.io/vuLC7 -v -O fedora23_broadcom_wl_install.sh && sh ./fedora23_broadcom_wl_install.sh;
+  580  exit
+  581  source activate fullfeatured
+  582  jupyter notebook
+  583  exit
+  584  ping www.google.com
+  585  ssh hpc_aqeel@juur.grid.eenet.ee 
+  586  exit
+  587  ls
+  588  ssh hpc_aqeel@juur.grid.eenet.ee 
+  589  exit
+  590  ssh hpc_aqeel@juur.grid.eenet.ee 
+  591  exit
+  592  python
+  593  exit
+  594  source activate fullfeatured
+  595  ls
+  596  python Phrase_Alignment.py 
+  597  vim Phrase_Alignment.py 
+  598  python Phrase_Alignment.py 
+  599  exit
+  600  7za a submit.7z output.txt Phrase_Alignment.py
+  601  git status
+  602  git add output2.txt Phrase_Alignment.ipynb Phrase_Alignment.py submit.7z 
+  603  git status
+  604  git push origin master 
+  605  git commit -m 'home work 2 finalized'
+  606  git push origin master 
+  607  exit
+  608  ssh hpc_aqeel@juur.grid.eenet.ee 
+  609  exit
+  610  ssh hpc_aqeel@juur.grid.eenet.ee 
+  611  exit
+  612  cd 02Phrase/
+  613  source activate fullfeat
+  614  source activate fullfeatured
+  615  python Phrase_Alignment.py 
+  616  vim Phrase_Alignment.
+  617  vim Phrase_Alignment.py 
+  618  python Phrase_Alignment.py 
+  619  vim Phrase_Alignment.
+  620  vim Phrase_Alignment.py
+  621  python Phrase_Alignment.py 
+  622  vim Phrase_Alignment.py 
+  623  nautilus
+  624  ssh hpc_aqeel@juur.grid.eenet.ee 
+  625  ssh labash@rocket.hpc.ut.ee 
+  626  python Phrase_Alignment.py 
+  627  مس
+  628  ls
+  629  cd ..
+  630  ls
+  631  exit
+  632  cd Documents/3rdsemester/MT/02Phrase/
+  633  ls
+  634  cd ..
+  635  source activate fullfeatured
+  636  jupyter notebook
+  637  exit
+  638  ssh hpc_aqeel@juur.grid.eenet.ee 
+  639  ssh hpc_aqeel@juur.grid.eenet.ee 
+  640  cd Documents/3rdsemester/BIO/
+  641  ls
+  642  cd Rosalind-TBT/
+  643  cd ..
+  644  git status
+  645  cd Rosalind-TBT/
+  646  ls
+  647  git pull origin master 
+  648  cp ba3j.py ba4a.py
+  649  vim ba4a.py 
+  650  vim ba4b.py 
+  651  exit
+  652  scp hpc_aqeel@juur.grid.eenet.ee:/storage/hpc_aqeel/output.7z .
+  653  exit
+  654  7za x output.7z 
+  655  exit
+  656  source activate fullfeatured
+  657  jupyter notebook
+  658  exit
+  659  scp hpc_aqeel@juur.grid.eenet.ee:/storage/hpc_aqeel/output.7z .
+  660  exit
+  661  ssh hpc_aqeel@juur.grid.eenet.ee 
+  662  clear
+  663  exit
+  664  ssh hpc_aqeel@juur.grid.eenet.ee 
+  665  exit
+  666  python ba4a.py 
+  667  python
+  668  python ba4a.py 
+  669  pwd
+  670  cat data
+  671  python ba4a.py 
+  672  clear
+  673  cp ba4a.py ba4b.py
+  674  python ba4b.py 
+  675  clear
+  676  ssh hpc_aqeel@juur.grid.eenet.ee 
+  677  clear
+  678  exit
+  679  ls
+  680  ./kazam 
+  681  exit
+  682  sudo dnf install recordmydesktop-0.3.8.1-16.fc24.x86_64 
+  683  clear
+  684  recordmydesktop 
+  685  sudo dnf install gtk-recordmydesktop-0.3.8-16.fc24.noarch 
+  686  sudo dnf install istanbul
+  687  clear
+  688  sudo dnf install byzanz
+  689  clear
+  690  exit
+  691  ssh hpc_aqeel@juur.grid.eenet.ee 
+  692  clear
+  693  ssh hpc_aqeel@juur.grid.eenet.ee 
+  694  cd ..
+  695  cd ../../Internship/APES/
+  696  source activate fullfeatured
+  697  jupter notebook
+  698  jupyter notebook
+  699  clear
+  700  ls
+  701  jupyter notebook
+  702  clear
+  703  exit
+  704  7za a prj.zip Project_data2.csv 
+  705  exit
+  706  git clone https://github.com/aqeel13932/BIO_PROJ.git
+  707  ls
+  708  cd BIO_PROJ/
+  709  git add .
+  710  ls
+  711  git status 
+  712  git commit -m 'initial'
+  713  git push origin master 
+  714  clear
+  715  exit
+  716  cd ..
+  717  cd BIO_PROJ/
+  718  ls
+  719  git add .
+  720  git status
+  721  git commit -m 'data sets ready'
+  722  git push origin master 
+  723  clear
+  724  ls
+  725  git add .
+  726  ls
+  727  git status
+  728  git add .
+  729  ls
+  730  git status 
+  731  git commit -m 'add plots folder'
+  732  git add .
+  733  git status
+  734  git commit -m 'plots folder'
+  735  git push origin master 
+  736  clear
+  737  exit
+  738  source activate fullfeatured
+  739  clear
+  740  ls
+  741  jupyter notebook
+  742  clear
+  743  ls
+  744  cd ..
+  745  ls
+  746  cd BIO
+  747  cd ..
+  748  cd BIO_PROJ/
+  749  ls
+  750  cd ..
+  751  jupyter notebook
+  752  exit
+  753  ls
+  754  cd output/
+  755  ls
+  756  vim TestFunctions.py
+  757  ls
+  758  vim TestFunctions.py
+  759  ssh hpc_aqeel@juur.grid.eenet.ee 
+  760  exit
+  761  ssh hpc_aqee@juur.grid.eenet.ee 
+  762  ssh hpc_aqeel@juur.grid.eenet.ee 
+  763  exit
+  764  ls
+  765  clear
+  766  ls
+  767  clear
+  768  cd Documents/Internship/APES/
+  769  source activate fullfeatured
+  770  jupyter notebook
+  771  clear
+  772  exit
+  773  cd Documents/3rdsemester/BIO/Rosalind-TBT/
+  774  ls
+  775  vim ba4b.py 
+  776  cp ba4b.py ba4c.py
+  777  vim ba4c.py 
+  778  git status
+  779  git add .
+  780  git commit -m 'updates'
+  781  git push origin master 
+  782  exit
+  783  python ba4b.py 
+  784  clear
+  785  git add .
+  786  git status
+  787  git commit -m 'add solved problems'
+  788  git push origin master 
+  789  clear
+  790  python ba4c.py 
+  791  python
+  792  clear
+  793  python ba4c.py 
+  794  clear
+  795  python ba4c.py 
+  796  python
+  797  python ba4c.py 
+  798  clear
+  799  exit
+  800  cd Documents/Internship/APES/
+  801  ls
+  802  clear
+  803  ssh hpc_aqeel@juur.grid.eenet.ee 
+  804  exit
+  805  rm -rf MOD
+  806  exit
+  807  ssh hpc_aqeel@juur.grid.eenet.ee 
+  808  clear
+  809  scp hpc_aqeel@juur.grid.eenet.ee:/storage/hpc_aqeel/output.7z ./output/
+  810  cd output/
+  811  ls
+  812  clear
+  813  ls
+  814  vim TestFunctions.py
+  815  ssh hpc_aqeel@juur.grid.eenet.ee 
+  816  ls
+  817  vim finalize.sh
+  818  clear
+  819  vim finalize.sh 
+  820  chmod +x finalize.sh 
+  821  ./finalize.sh 
+  822  clear
+  823  vim finalize.sh 
+  824  clear
+  825  vim finalize.sh 
+  826  exit
+  827  cd output/
+  828  ./finalize.sh 
+  829  ssh hpc_aqeel@juur.grid.eenet.ee 
+  830  exit
+  831  cd ~/Downloads/
+  832  ls
+  833  sudo dnf install slack-2.2.1-0.1.fc21.x86_64.rpm 
+  834  exit
+  835  source activate fullfeatured
+  836  jupyter notebook
+  837  clear
+  838  exit
+  839  ssh hpc_aqeel@juur.grid.eenet.ee 
+  840  exit
+  841  cd Documents/3rdsemester/BIO
+  842  ls
+  843  cd Rosalind-TBT/
+  844  ls
+  845  clear
+  846  ls
+  847  clear
+  848  ls
+  849  vim ba4c.py 
+  850  cp ba4c.py ba4d.py
+  851  vim ba4d.py 
+  852  vim ba4d
+  853  vim ba4d.py 
+  854  pythoh ba4c.py 
+  855  python ba4c.py 
+  856  ls
+  857  python ba4d.py 
+  858  clear
+  859  python ba4d.py 
+  860  clear
+  861  python ba4d.py 
+  862  python ba4d2.py 
+  863  python ba4d.py 
+  864  pythoh ba4d2.py 
+  865  python ba4d2.py 
+  866  clear
+  867  pythoh ba4d.py 
+  868  python ba4d.py 
+  869  pythoh ba4d.py 
+  870  python ba4d.py 
+  871  clear
+  872  python
+  873  python ba4d.py 
+  874  sudo dnf install libfreenect
+  875  reboot
+  876  freenect-glview 
+  877  clear
+  878  cd Documents/3rdsemester/BIO/Rosalind-TBT/
+  879  ls
+  880  vim ba4d.py 
+  881  clear
+  882  ssh hpc_aqeel@juur.grid.eenet.ee 
+  883  exit
+  884  cd APES/output/
+  885  ls
+  886  cd 7/
+  887  ls
+  888  exit
+  889  scp model.h5  hpc_aqeel@juur.grid.eenet.ee:/storage/hpc_aqeel/E65/
+  890  exit
+  891  cd ..
+  892  cd Internship/
+  893  ls
+  894  source activate fullfeatured
+  895  jupyter notebook
+  896  exit
+  897  cd ..
+  898  cd 3rdsemester/BIO/Rosalind-TBT/
+  899  ls
+  900  clear
+  901  vim ba4d.py 
+  902  clear
+  903  cp ba4c.py ba4e.py
+  904  vim ba4e.py 
+  905  git status
+  906  git add .
+  907  git status
+  908  git add -remove ba4d2.py 
+  909  git add --remove ba4d2.py 
+  910  git reset ba4d2.py
+  911  git status
+  912  rm ba4d2.py 
+  913  git add ../Pupils_HW/.~lock.ACD.csv# 
+  914  git commit -m 'updates'
+  915  git push origin master 
+  916  exit
+  917  python ba4d.py 
+  918  exit
+  919  freenect-glview 
+  920  freenect-glpclview 
+  921  freenect-regview 
+  922  freenect-cppview 
+  923  exit
+  924  python ba4e.py 
+  925  python
+  926  python ba4e.py 
+  927  ssh hpc_aqeel@juur.grid.eenet.ee 
+  928  python ba4e.py 
+  929  vim log.txt 
+  930  cd ..
+  931  cd Internship/
+  932  scp hpc_aqeel@juur.grid.eenet.ee:/storage/hpc_aqeel/e.7z .
+  933  exit
+  934  cd ~/Documents/Internship/
+  935  scp hpc_aqeel@juur.grid.eenet.ee:/storage/hpc_aqeel/launch_bs5_nrwrd.sh .
+  936  clear
+  937  ls
+  938  ./launch_bs5_nrwrd.sh 
+  939  ls
+  940  jobs
+  941  clear
+  942  ls
+  943  cd E62/
+  944  ls
+  945  cat E62_log.out 
+  946  clear
+  947  cd ..
+  948  source activate fullfeatured
+  949  clear
+  950  ls
+  951  ./launch_bs5_nrwrd.sh 
+  952  ls
+  953  jobs
+  954  clear
+  955  cat E62/E62_log.out 
+  956  cd E62/
+  957  ls
+  958  python duel.py --activation relu --advantage avg --tau 0.01 --rwrdschem -1 1 -0.1 --batch_size 10
+  959  pip install -U --force-reinstall matplotlib
+  960  python duel.py --activation relu --advantage avg --tau 0.01 --rwrdschem -1 1 -0.1 --batch_size 10
+  961  clear
+  962  cd ..
+  963  clear
+  964  ./launch_bs5_nrwrd.sh 
+  965  jobs
+  966  taskset 
+  967  taskset -a
+  968  man taskset
+  969  taskset -a
+  970  sudo taskset -a
+  971  taskset -p
+  972  taskset -c
+  973  clear
+  974  cat E62/E62_log.out 
+  975  clear
+  976  cat E63/E63_log.out 
+  977  cat E64/E64_log.out 
+  978  cat E65/E65_log.out 
+  979  clear
+  980  cd E62/
+  981  vim duel.py 
+  982  python duel.py --activation relu --advantage avg --tau 0.01 --rwrdschem -1 1 -0.1 --batch_size 10
+  983  vim duel.py 
+  984  python duel.py --activation relu --advantage avg --tau 0.01 --rwrdschem -1 1 -0.1 --batch_size 10
+  985  clear
+  986  vim duel.py 
+  987  python duel.py --activation relu --advantage avg --tau 0.01 --rwrdschem -1 1 -0.1 --batch_size 10
+  988  history
+  989  clear
+  990  conda install opencv=3
+  991  source deactivate
+  992  conda install -n fullfeatured opencv=3
+  993  conda install -n fullfeatured cv=3
+  994  source activate fullfeatured
+  995  python
+  996  ping www.google.com
+  997  dnf install opencv*
+  998  sudo dnf install opencv*
+  999  clear
+ 1000  exit
+ 1001  cd ~/Documents/Internship/APES/
+ 1002  ls
+ 1003  cler
+ 1004  clear
+ 1005  ls
+ 1006  /usr/bin/python
+ 1007  history>log.out

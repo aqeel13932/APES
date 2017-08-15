@@ -1,0 +1,7 @@
+observed as binary.
+The other agent as binary.
+The player or (current agent) as binary.
+Food as binary.
+Obstacles as binary.
+The other agent orientation as one hot vector.
+The player orientation as one hot vector.
