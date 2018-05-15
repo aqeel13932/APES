@@ -37,7 +37,7 @@ class Settings:
     Obstacles=3000
 
     #World Size
-    WorldSize=(20,20)
+    WorldSize=(11,11)
 
     #Figure Size
     FigureSize = (10,10)
@@ -56,21 +56,8 @@ class Settings:
         """Convert Integerwise distribution array to indicies  
         Args:
             * Name: The name of the distribution
-            * IntProbabilityDst: Integer array [0....+inf] of the world size, Used to generate Probability matrix using dirichlet distribution"""
-        
-        # Create A Probability with sum to 1.
-        # more info : 
-        # https://en.wikipedia.org/wiki/Dirichlet_distribution
-        # http://docs.scipy.org/doc/numpy/reference/generated/numpy.random.dirichlet.html
-        # multiplied by 1000 to increase the precision.
-        Settings.ProbabilitiesTable[Name] = np.random.dirichlet(IntProbabilityDst.ravel()*1000)
-
-        #dx  = np.random.dirichlet(IntProbabilityDst.ravel())
-        # desendent order of indicies with highest probability
-        #rgsrt =  (-np.array(dx)).argsort()
-        
-        #Settings.ProbabilitiesTable[Name] = np.unravel_index(argsrt,IntProbabilityDst.shape)
-
+            * IntProbabilityDst: Integer array [0....+inf] of the world size, Used to generate Probability matrix"""
+        Settings.ProbabilitiesTable[Name] = (IntProbabilityDst/ IntProbabilityDst.sum()).ravel()
     @staticmethod
     def SetWorldSize(x,y):
         """Update world Size
