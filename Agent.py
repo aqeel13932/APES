@@ -59,10 +59,10 @@ class Agent:
         if not os.path.isfile(Fname):
             raise IOError('file:\'{}\' not found'.format(Fname))
         self.ControlRange=ControlRange
-        W = Settings.ImageViewer(transform.resize(io.imread(Fname),Settings.BlockSize)) #Image of Robot looking West
+        W = Settings.ImageViewer(transform.resize(io.imread(Fname),Settings.BlockSize,mode='constant')) #Image of Robot looking West
         E = np.fliplr(W)
-        S = transform.rotate(E,-90,resize=True)
-        N = transform.rotate(E,90,resize=True)
+        S = transform.rotate(E,-90,resize=True,mode='constant')
+        N = transform.rotate(E,90,resize=True,mode='constant')
         self.Directions = {'W' : W ,'N':N, 'S': S,'E':E}
         visionshape = (Settings.WorldSize[0]*2-1,Settings.WorldSize[1]*2-1)
         self.ID = Settings.GetAgentID() # Get Agent ID
@@ -268,6 +268,7 @@ class Agent:
         choices = np.random.choice(len(Settings.PossibleActions))
         try:
             self.NextAction =  Settings.PossibleActions[choices]
+            self.AddAction(choices)
             return choices
         except IndexError:
             
@@ -287,6 +288,7 @@ class Agent:
         if self.AM:
             self.LastnAction.fill(False)
         self.NextAction=[]
+        #Temporary Disabled
         self.Direction= np.random.choice(['W','E','N','S']) # Direction of Agent
     def Flateoutput(self):
         """Flatten NNfeed for current agent
@@ -303,6 +305,22 @@ class Agent:
         else:
             return np.concatenate([self.NNFeed[x].flatten() for x in self.NNFeed])
         #return self.MultiPlex
+    def Convlutional_output(self):
+        cnn =np.stack([self.NNFeed['observed'],
+                        self.NNFeed['mypos'],
+                        self.NNFeed['obstacles'],
+                        self.NNFeed['food'],
+                        self.NNFeed['agentpos1002']],axis=-1)
+        if self.AM:
+            rest = np.concatenate([self.NNFeed['myori'],
+                                   self.NNFeed['agentori1002'],
+                                   self.LastnAction.flatten()])
+        else:
+            rest = np.concatenate([self.NNFeed['myori'],
+                                   self.NNFeed['agentori1002']])
+
+        return cnn,rest
+
     def AddAction(self,selected):
         if self.AM:
             self.LastnAction[:-1]= self.LastnAction[1:]

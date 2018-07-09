@@ -113,7 +113,7 @@ class Settings:
         """
         if not os.path.isfile(Fname):
             raise IOError('file:\'{}\' not found'.format(Fname))
-        Settings.Images[Key] = Settings.ImageViewer(transform.resize(io.imread(Fname),Settings.BlockSize))
+        Settings.Images[Key] = Settings.ImageViewer(transform.resize(io.imread(Fname),Settings.BlockSize,mode='constant'))
     @staticmethod
     def SetBlockSize(Newsize):
         """Set new block size in the Settings

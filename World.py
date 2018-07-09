@@ -225,6 +225,7 @@ class World:
         self.AfterEndSteps = [self.AES]
         self.Terminated = [False]
         self.world.fill(0)
+        self.VBM.fill(0)
         #map(lambda x: self.agents[x].FullReset(),self.agents.keys())
         for x in self.agents.keys():
             self.agents[x].FullReset()
@@ -474,6 +475,9 @@ class World:
         tmpworld2[tmpworld2==-10]=0                   
         agnt.FullEgoCentric.fill(-1)
         agnt.FullEgoCentric[borders[0]:borders[1],borders[2]:borders[3]] = tmpworld2
+        ######## REMOVE ME IF YOU WANT VISION TO COME BACK TO NORMAL######
+        #if agnt.ID==1001:
+        #    agnt.FullEgoCentric[borders[0]:borders[1],borders[2]:borders[3]] = np.array(self.world,copy=True)
     @staticmethod
     def _GetElementCoords(ID,array):
         """Get Element coordinates in specific array"""
