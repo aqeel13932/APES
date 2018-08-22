@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: class World</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>APES.World</strong> = <a name="APES.World">class World</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;represent&nbsp;the&nbsp;Grid&nbsp;world&nbsp;and&nbsp;organize&nbsp;the&nbsp;policy&nbsp;between&nbsp;world&nbsp;elements.<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;agents:&nbsp;Ordered&nbsp;Dictionary&nbsp;(Key:&nbsp;Agent&nbsp;ID,&nbsp;Value:&nbsp;Agent&nbsp;Object)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;foods:&nbsp;Dictionary&nbsp;(Key:Food&nbsp;ID,&nbsp;Value:&nbsp;Food&nbsp;object)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;obstacles:&nbsp;Dictionary&nbsp;(Key:&nbsp;obstacle&nbsp;ID,&nbsp;Value:&nbsp;Obstacle&nbsp;object)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;world:&nbsp;numpy&nbsp;array&nbsp;(n,n)&nbsp;represent&nbsp;the&nbsp;World<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;VBM:&nbsp;Vision&nbsp;border&nbsp;map.&nbsp;It's&nbsp;binary&nbsp;numpy&nbsp;array&nbsp;(True:can't&nbsp;see&nbsp;through,False:&nbsp;Can&nbsp;see&nbsp;through)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;options:&nbsp;dictionary&nbsp;link&nbsp;letters&nbsp;with&nbsp;action&nbsp;example&nbsp;Key:'W'-&gt;&nbsp;Value:_WestPosition<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;RotationAction:&nbsp;dictionary&nbsp;(Key:(Rotation&nbsp;direction,Current&nbsp;Direction),Value:New&nbsp;Direction)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ANNIG:&nbsp;more&nbsp;info&nbsp;in&nbsp;__init__<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;RF:&nbsp;Reward&nbsp;function,&nbsp;Variable&nbsp;to&nbsp;store&nbsp;the&nbsp;function&nbsp;responsible&nbsp;for&nbsp;distributing&nbsp;the&nbsp;rewrar&nbsp;between&nbsp;agents.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;RewardScheme:&nbsp;array&nbsp;determine&nbsp;the&nbsp;default&nbsp;reward&nbsp;(more&nbsp;info&nbsp;in&nbsp;__init__)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;AES:&nbsp;constant&nbsp;number&nbsp;of&nbsp;steps&nbsp;where&nbsp;the&nbsp;game&nbsp;continue&nbsp;even&nbsp;if&nbsp;the&nbsp;food&nbsp;had&nbsp;been&nbsp;eaten.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;AfterEndSteps:&nbsp;one&nbsp;element&nbsp;array&nbsp;represent&nbsp;number&nbsp;of&nbsp;steps&nbsp;where&nbsp;the&nbsp;game&nbsp;continue&nbsp;even&nbsp;if&nbsp;the&nbsp;food&nbsp;had&nbsp;been&nbsp;eaten&nbsp;(by&nbsp;ref&nbsp;value&nbsp;change&nbsp;each&nbsp;step.)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Terminated:&nbsp;one&nbsp;element&nbsp;array&nbsp;represent&nbsp;the&nbsp;status&nbsp;of&nbsp;the&nbsp;game.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;StepsLimit:&nbsp;maximum&nbsp;number&nbsp;of&nbsp;steps&nbsp;for&nbsp;the&nbsp;game&nbsp;to&nbsp;terminate.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;StepsCounter:&nbsp;the&nbsp;number&nbsp;of&nbsp;steps&nbsp;up&nbsp;to&nbsp;now.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Limited:&nbsp;identify&nbsp;if&nbsp;this&nbsp;game&nbsp;is&nbsp;limited&nbsp;by&nbsp;steps&nbsp;number&nbsp;or&nbsp;not.<br>
+TODO:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Improve&nbsp;function&nbsp;_GetVisionBorders&nbsp;by&nbsp;removing&nbsp;all&nbsp;if&nbsp;statements&nbsp;in&nbsp;that&nbsp;function.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;replace&nbsp;it&nbsp;with&nbsp;dictinary&nbsp;someway.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="World-AddAgents"><strong>AddAgents</strong></a>(self, agents)</dt><dd><tt>Add&nbsp;List&nbsp;of&nbsp;Agents&nbsp;to&nbsp;the&nbsp;world<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;agents:&nbsp;[agent1,agent2,...]<br>
+Exceptions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;AssertionError:&nbsp;if&nbsp;agents&nbsp;wasn't&nbsp;a&nbsp;list</tt></dd></dl>
+
+<dl><dt><a name="World-AddFoods"><strong>AddFoods</strong></a>(self, foods)</dt><dd><tt>Add&nbsp;List&nbsp;of&nbsp;foods&nbsp;to&nbsp;the&nbsp;world<br>
+foods:&nbsp;[food1,food2,...]</tt></dd></dl>
+
+<dl><dt><a name="World-AddObstacles"><strong>AddObstacles</strong></a>(self, obstacles)</dt><dd><tt>Add&nbsp;List&nbsp;of&nbsp;obstacles&nbsp;to&nbsp;the&nbsp;world<br>
+obstacles:&nbsp;[obstacle1,obstacle2,...]</tt></dd></dl>
+
+<dl><dt><a name="World-AgentViewPoint"><strong>AgentViewPoint</strong></a>(self, ID)</dt><dd><tt>Build&nbsp;image&nbsp;from&nbsp;agent&nbsp;prespictive<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ID:&nbsp;agent&nbsp;ID<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;EgoCentric:&nbsp;True&nbsp;EgoCentric&nbsp;View&nbsp;,&nbsp;False:&nbsp;Normal&nbsp;map&nbsp;view<br>
+Return:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;((WorldSize&nbsp;*&nbsp;BlockSize)*3)&nbsp;Image</tt></dd></dl>
+
+<dl><dt><a name="World-BuildImage"><strong>BuildImage</strong></a>(self)</dt><dd><tt>Build&nbsp;map&nbsp;image<br>
+Return:&nbsp;((WorldSize&nbsp;*&nbsp;BlockSize)*3)&nbsp;Image</tt></dd></dl>
+
+<dl><dt><a name="World-DoAction"><strong>DoAction</strong></a>(self, ID, Action)</dt><dd><tt>Main&nbsp;action&nbsp;function&nbsp;that&nbsp;bind&nbsp;to&nbsp;all&nbsp;actions<br>
+ID&nbsp;:&nbsp;the&nbsp;agent&nbsp;ID<br>
+Action&nbsp;:&nbsp;(X,Y)&nbsp;where&nbsp;if&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X:&nbsp;L&nbsp;(Look)&nbsp;or&nbsp;M&nbsp;(Move)&nbsp;-&gt;&nbsp;Y:&nbsp;('N','E','W','S')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;(Rotate)-&gt;&nbsp;Y:(R,L)</tt></dd></dl>
+
+<dl><dt><a name="World-GenerateWorld"><strong>GenerateWorld</strong></a>(self)</dt><dd><tt>Description:&nbsp;Generate&nbsp;the&nbsp;world&nbsp;depending&nbsp;on&nbsp;the&nbsp;inserted&nbsp;data</tt></dd></dl>
+
+<dl><dt><a name="World-GetElementImage"><strong>GetElementImage</strong></a>(self, ID)</dt><dd><tt>Get&nbsp;element&nbsp;image&nbsp;from&nbsp;element&nbsp;id<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ID:&nbsp;Element&nbsp;ID<br>
+Return:&nbsp;Image&nbsp;in&nbsp;numpy&nbsp;array</tt></dd></dl>
+
+<dl><dt><a name="World-GetPlace"><strong>GetPlace</strong></a>(self, Name=None)</dt><dd><tt>Get&nbsp;valid&nbsp;place&nbsp;for&nbsp;obstacle&nbsp;(Totally&nbsp;random&nbsp;or&nbsp;depending&nbsp;or&nbsp;probability&nbsp;distribution&nbsp;Provided&nbsp;to&nbsp;the&nbsp;obstacle&nbsp;it&nbsp;self)<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;key:&nbsp;Obstacle&nbsp;ID</tt></dd></dl>
+
+<dl><dt><a name="World-GetRandomPlace"><strong>GetRandomPlace</strong></a>(self)</dt><dd><tt>Get&nbsp;occupied&nbsp;random&nbsp;place&nbsp;from&nbsp;world&nbsp;map<br>
+Return:&nbsp;row,column</tt></dd></dl>
+
+<dl><dt><a name="World-Look"><strong>Look</strong></a>(self, ID, Direction)</dt><dd><tt>Change&nbsp;the&nbsp;agent&nbsp;Direction<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ID&nbsp;:&nbsp;the&nbsp;agent&nbsp;ID<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Direction&nbsp;:&nbsp;'W',&nbsp;'E',&nbsp;'N','S'</tt></dd></dl>
+
+<dl><dt><a name="World-Move"><strong>Move</strong></a>(self, ID, Direction)</dt><dd><tt>Move&nbsp;agent&nbsp;with&nbsp;ID&nbsp;in&nbsp;the&nbsp;specificed&nbsp;direction<br>
+ID&nbsp;:&nbsp;the&nbsp;agent&nbsp;ID<br>
+Direction&nbsp;:&nbsp;'W',&nbsp;'E',&nbsp;'N','S'</tt></dd></dl>
+
+<dl><dt><a name="World-PlaceAgents"><strong>PlaceAgents</strong></a>(self)</dt><dd><tt>Assigen&nbsp;Places&nbsp;to&nbsp;Agents</tt></dd></dl>
+
+<dl><dt><a name="World-PlaceFoods"><strong>PlaceFoods</strong></a>(self)</dt><dd><tt>Assigen&nbsp;places&nbsp;to&nbsp;Foods</tt></dd></dl>
+
+<dl><dt><a name="World-PlaceObstacle"><strong>PlaceObstacle</strong></a>(self, center, key)</dt><dd><tt>Put&nbsp;an&nbsp;obstacle&nbsp;on&nbsp;the&nbsp;world&nbsp;map<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;center:&nbsp;(row,column)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;key:&nbsp;obstacle&nbsp;ID</tt></dd></dl>
+
+<dl><dt><a name="World-PlaceObstacles"><strong>PlaceObstacles</strong></a>(self)</dt><dd><tt>Places&nbsp;&nbsp;to&nbsp;obstacles</tt></dd></dl>
+
+<dl><dt><a name="World-Rotate"><strong>Rotate</strong></a>(self, ID, Direction)</dt><dd><tt>Rotate&nbsp;in&nbsp;specific&nbsp;direction<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ID&nbsp;:&nbsp;the&nbsp;agent&nbsp;ID<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Direction&nbsp;:&nbsp;'R','L'</tt></dd></dl>
+
+<dl><dt><a name="World-Step"><strong>Step</strong></a>(self)</dt><dd><tt>Execute&nbsp;all&nbsp;agents&nbsp;actions,&nbsp;calculate&nbsp;there&nbsp;vision,&nbsp;and&nbsp;ditribute&nbsp;rewards</tt></dd></dl>
+
+<dl><dt><a name="World-__init__"><strong>__init__</strong></a>(self, ANNIG=None, RewardsScheme=[-10, 10, -1], RewardFunction=None, AES=0, StepsLimit=None)</dt><dd><tt>Description:&nbsp;Initialize&nbsp;the&nbsp;world&nbsp;depending&nbsp;on&nbsp;the&nbsp;settings&nbsp;from&nbsp;Settings.py&nbsp;file<br>
+IMPORTANT:&nbsp;AGENTS&nbsp;ARE&nbsp;ORDERED&nbsp;DICTIONARY,&nbsp;SO&nbsp;IF&nbsp;ORDER&nbsp;IMPORTANT&nbsp;ORDER&nbsp;THEM&nbsp;IN&nbsp;INPUT&nbsp;LIST&nbsp;(MORE&nbsp;POWERFUL&nbsp;BEFORE&nbsp;THE&nbsp;WEAK&nbsp;OR&nbsp;OPPIST&nbsp;DEPENDING&nbsp;ON&nbsp;YOUR&nbsp;NEED)<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ANNIG:(Agent&nbsp;Neural&nbsp;Network&nbsp;Input&nbsp;Gnerator)&nbsp;Function&nbsp;to&nbsp;generate&nbsp;the&nbsp;input&nbsp;for&nbsp;the&nbsp;neural&nbsp;network,&nbsp;info&nbsp;about&nbsp;the&nbsp;parameters&nbsp;from&nbsp;_FindAgentOutput&nbsp;function.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EXAMPLE&nbsp;FUNCTION&nbsp;(Default&nbsp;at&nbsp;version&nbsp;0.1):&nbsp;Check&nbsp;_FindAgentOutput<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;RewardsScheme:&nbsp;[Punishment&nbsp;Factor&nbsp;(agents&nbsp;meet)&nbsp;,Reward&nbsp;Factor(Food&nbsp;in&nbsp;Range),&nbsp;Punishement&nbsp;per&nbsp;Step]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;RewardFunction:&nbsp;Function&nbsp;responsible&nbsp;to&nbsp;distribute&nbsp;reward&nbsp;and&nbsp;punishments&nbsp;on&nbsp;agents,&nbsp;info&nbsp;about&nbsp;the&nbsp;parameters&nbsp;from&nbsp;_EstimateRewards<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EXAMPLE&nbsp;FUNCTION&nbsp;(Default&nbsp;at&nbsp;version&nbsp;0.1):&nbsp;Check&nbsp;_EstimateRewards<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;AES:&nbsp;(After&nbsp;End&nbsp;Steps)&nbsp;number&nbsp;of&nbsp;steps&nbsp;to&nbsp;keep&nbsp;the&nbsp;game&nbsp;going&nbsp;while&nbsp;no&nbsp;food&nbsp;exist.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;StepsLimit:&nbsp;maximum&nbsp;number&nbsp;of&nbsp;steps&nbsp;for&nbsp;the&nbsp;game&nbsp;to&nbsp;terminate,Default&nbsp;is&nbsp;none&nbsp;(unlimited).</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="World-GetOddDomain"><strong>GetOddDomain</strong></a>(number, center)</dt><dd><tt>Get&nbsp;[start,end]&nbsp;domain&nbsp;for&nbsp;odd&nbsp;number&nbsp;,&nbsp;example&nbsp;(number-&gt;&nbsp;3,center&nbsp;-&gt;&nbsp;0)&nbsp;-&gt;&nbsp;[-1,2]&nbsp;which&nbsp;is&nbsp;3&nbsp;elements&nbsp;in&nbsp;total&nbsp;(-1,0,1)&nbsp;around&nbsp;the&nbsp;center&nbsp;0<br>
+Args&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;number:&nbsp;how&nbsp;many&nbsp;elements&nbsp;wanted.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;center:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;center<br>
+Return:&nbsp;start,end&nbsp;of&nbsp;type&nbsp;int</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table>
+</body></html>

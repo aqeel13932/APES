@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: class Agent</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>APES.Agent</strong> = <a name="APES.Agent">class Agent</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;class&nbsp;simulate&nbsp;the&nbsp;agent&nbsp;behavior.<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Power:&nbsp;agent&nbsp;power&nbsp;(used&nbsp;as&nbsp;factor&nbsp;to&nbsp;punish&nbsp;other&nbsp;agent)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Range:&nbsp;how&nbsp;far&nbsp;the&nbsp;agent&nbsp;can&nbsp;see<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;VA:&nbsp;Vision&nbsp;Angle&nbsp;(in&nbsp;Degrees)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Direction:&nbsp;Determine&nbsp;where&nbsp;the&nbsp;agent&nbsp;currently&nbsp;looking.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;See:&nbsp;Determine&nbsp;if&nbsp;other&nbsp;agents&nbsp;can&nbsp;see&nbsp;through&nbsp;this&nbsp;agent&nbsp;(True)&nbsp;or&nbsp;not&nbsp;(False)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ControlRange:&nbsp;determine&nbsp;the&nbsp;distance&nbsp;needed&nbsp;for&nbsp;this&nbsp;agent&nbsp;to&nbsp;be&nbsp;able&nbsp;to&nbsp;punish&nbsp;other&nbsp;agents.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Directions:&nbsp;Dictionary&nbsp;contain&nbsp;the&nbsp;agent&nbsp;image&nbsp;(Key:['W'&nbsp;or&nbsp;'S'&nbsp;etc.],Value:&nbsp;Image)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ID:&nbsp;Agent&nbsp;ID<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;IndiciesOrderName:&nbsp;The&nbsp;name&nbsp;of&nbsp;Probablity&nbsp;distribution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;VisionFields:&nbsp;Dictionary&nbsp;(Key:['W'&nbsp;or&nbsp;'S'&nbsp;etc.],Value:&nbsp;Egocentric&nbsp;matrix&nbsp;decribe&nbsp;what&nbsp;agent&nbsp;can&nbsp;see&nbsp;in&nbsp;that&nbsp;direction)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;borders:&nbsp;tuple&nbsp;(Rmin,Rmax,Cmin,Cmax)&nbsp;to&nbsp;extract&nbsp;the&nbsp;world&nbsp;in&nbsp;centric&nbsp;vision&nbsp;from&nbsp;EgoCentrix&nbsp;matrix&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Phases:&nbsp;dictionary&nbsp;(Key:1-3,&nbsp;Value:&nbsp;Function&nbsp;correspond&nbsp;to&nbsp;the&nbsp;phase)&nbsp;(used&nbsp;to&nbsp;speed&nbsp;up&nbsp;in&nbsp;internal&nbsp;operation&nbsp;for&nbsp;visionfields)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;NextAction:&nbsp;array&nbsp;contain&nbsp;next&nbsp;action/actions&nbsp;to&nbsp;be&nbsp;processed&nbsp;in&nbsp;the&nbsp;next&nbsp;step&nbsp;of&nbsp;the&nbsp;World.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;CurrentReward:&nbsp;After&nbsp;passing&nbsp;step,&nbsp;this&nbsp;variable&nbsp;will&nbsp;contain&nbsp;the&nbsp;reward&nbsp;the&nbsp;agent&nbsp;got&nbsp;from&nbsp;the&nbsp;step.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;FullEgoCentric:&nbsp;numpy&nbsp;array&nbsp;contain&nbsp;what&nbsp;the&nbsp;agent&nbsp;can&nbsp;see&nbsp;in&nbsp;EgoCentric.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;NNFeed:&nbsp;Customized&nbsp;output&nbsp;(by&nbsp;default&nbsp;a&nbsp;list)&nbsp;contain&nbsp;what&nbsp;agent&nbsp;need&nbsp;as&nbsp;output&nbsp;from&nbsp;the&nbsp;world.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;CenterPoint:&nbsp;Vision&nbsp;Field&nbsp;center&nbsp;point<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;IAteFoodID:&nbsp;contain&nbsp;the&nbsp;food&nbsp;ID&nbsp;that&nbsp;has&nbsp;been&nbsp;eaten&nbsp;in&nbsp;the&nbsp;last&nbsp;step&nbsp;by&nbsp;this&nbsp;agent,&nbsp;-1&nbsp;if&nbsp;non&nbsp;eaten<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;IV:Incremental&nbsp;Vision,&nbsp;Each&nbsp;step&nbsp;the&nbsp;unseen&nbsp;only&nbsp;will&nbsp;be&nbsp;updated.(used&nbsp;in&nbsp;DetectAndAstar&nbsp;function&nbsp;(2d&nbsp;numpy&nbsp;array).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ndirection:&nbsp;link&nbsp;between&nbsp;(Agent&nbsp;location-&nbsp;next&nbsp;point)&nbsp;and&nbsp;the&nbsp;next&nbsp;action<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Agent-AddAction"><strong>AddAction</strong></a>(self, selected)</dt></dl>
+
+<dl><dt><a name="Agent-Convlutional_output"><strong>Convlutional_output</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Agent-DetectAndAstar"><strong>DetectAndAstar</strong></a>(self)</dt><dd><tt>Generate&nbsp;Next&nbsp;action&nbsp;using&nbsp;explore&nbsp;till&nbsp;we&nbsp;find&nbsp;the&nbsp;food&nbsp;then&nbsp;use&nbsp;A*&nbsp;algorithm&nbsp;to&nbsp;create&nbsp;a&nbsp;path&nbsp;to&nbsp;the&nbsp;next&nbsp;element.</tt></dd></dl>
+
+<dl><dt><a name="Agent-DrawDirectionImage"><strong>DrawDirectionImage</strong></a>(self)</dt><dd><tt>show&nbsp;an&nbsp;image&nbsp;showing&nbsp;all&nbsp;the&nbsp;agent&nbsp;direction&nbsp;images.</tt></dd></dl>
+
+<dl><dt><a name="Agent-Flateoutput"><strong>Flateoutput</strong></a>(self)</dt><dd><tt>Flatten&nbsp;NNfeed&nbsp;for&nbsp;current&nbsp;agent<br>
+Return:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1d&nbsp;numpy&nbsp;array&nbsp;of&nbsp;flatten&nbsp;concatenated&nbsp;arrays&nbsp;in&nbsp;NNFeed</tt></dd></dl>
+
+<dl><dt><a name="Agent-FullReset"><strong>FullReset</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;Agent&nbsp;information&nbsp;between&nbsp;games.</tt></dd></dl>
+
+<dl><dt><a name="Agent-GetElementsCount"><strong>GetElementsCount</strong></a>(self, Level)</dt><dd><tt>calculate&nbsp;total&nbsp;amount&nbsp;of&nbsp;cells&nbsp;we&nbsp;can&nbsp;see&nbsp;beside&nbsp;the&nbsp;center&nbsp;depending&nbsp;on&nbsp;the&nbsp;vision&nbsp;angle&nbsp;and&nbsp;Level.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;VA:&nbsp;Vision&nbsp;angle.[0&nbsp;-&gt;&nbsp;360]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Level:&nbsp;determine&nbsp;how&nbsp;far&nbsp;this&nbsp;level&nbsp;from&nbsp;the&nbsp;agent(1&nbsp;step&nbsp;,&nbsp;2&nbsp;steps&nbsp;etc&nbsp;...&nbsp;)&nbsp;[1-&gt;&nbsp;World&nbsp;Size&nbsp;-1]</tt></dd></dl>
+
+<dl><dt><a name="Agent-GetImage"><strong>GetImage</strong></a>(self)</dt><dd><tt>Get&nbsp;Image&nbsp;of&nbsp;the&nbsp;agent&nbsp;in&nbsp;Current&nbsp;direction<br>
+Return:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;numpy&nbsp;array&nbsp;image</tt></dd></dl>
+
+<dl><dt><a name="Agent-Phase1"><strong>Phase1</strong></a>(self, array, coords)</dt><dd><tt>Modify&nbsp;the&nbsp;border&nbsp;of&nbsp;the&nbsp;array&nbsp;to&nbsp;correspond&nbsp;to&nbsp;agent&nbsp;view&nbsp;angle.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;array:&nbsp;the&nbsp;array&nbsp;we&nbsp;want&nbsp;to&nbsp;apply&nbsp;field&nbsp;of&nbsp;view&nbsp;on.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;coords:&nbsp;contain&nbsp;the&nbsp;parameters&nbsp;of&nbsp;C1,C2,R1,R2,Phase&nbsp;(more&nbsp;info&nbsp;in&nbsp;updatevalues&nbsp;fucntion)<br>
+&nbsp;<br>
+Phase&nbsp;1.<br>
+During&nbsp;this&nbsp;phase&nbsp;we&nbsp;start&nbsp;from&nbsp;the&nbsp;max&nbsp;column(C1,C2)&nbsp;and&nbsp;middle&nbsp;Row&nbsp;(R1,R2)&nbsp;<br>
+and&nbsp;start&nbsp;moving&nbsp;up&nbsp;and&nbsp;down&nbsp;till&nbsp;&nbsp;<br>
+minimum&nbsp;row&nbsp;(R1&nbsp;)&nbsp;,&nbsp;max&nbsp;Row&nbsp;(R2)&nbsp;then&nbsp;we&nbsp;move&nbsp;to&nbsp;phase&nbsp;2</tt></dd></dl>
+
+<dl><dt><a name="Agent-Phase2"><strong>Phase2</strong></a>(self, array, coords)</dt><dd><tt>Modify&nbsp;the&nbsp;border&nbsp;of&nbsp;the&nbsp;array&nbsp;to&nbsp;correspond&nbsp;to&nbsp;agent&nbsp;view&nbsp;angle.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;array:&nbsp;the&nbsp;array&nbsp;we&nbsp;want&nbsp;to&nbsp;apply&nbsp;field&nbsp;of&nbsp;view&nbsp;on.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;coords:&nbsp;contain&nbsp;the&nbsp;parameters&nbsp;of&nbsp;C1,C2,R1,R2,Phase&nbsp;(more&nbsp;info&nbsp;in&nbsp;updatevalues&nbsp;fucntion)<br>
+&nbsp;<br>
+Phase&nbsp;2.<br>
+During&nbsp;this&nbsp;phase&nbsp;we&nbsp;start&nbsp;from&nbsp;the&nbsp;max&nbsp;column&nbsp;(C1,C2)&nbsp;and&nbsp;Min,Max&nbsp;Rows&nbsp;(R1,R2)&nbsp;<br>
+and&nbsp;start&nbsp;changing&nbsp;(C1,C2&nbsp;to&nbsp;minimum)&nbsp;till<br>
+C1,C2&nbsp;==0&nbsp;then&nbsp;we&nbsp;move&nbsp;to&nbsp;phase&nbsp;3</tt></dd></dl>
+
+<dl><dt><a name="Agent-Phase3"><strong>Phase3</strong></a>(self, array, coords)</dt><dd><tt>Modify&nbsp;the&nbsp;border&nbsp;of&nbsp;the&nbsp;array&nbsp;to&nbsp;correspond&nbsp;to&nbsp;agent&nbsp;view&nbsp;angle.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;array:&nbsp;the&nbsp;array&nbsp;we&nbsp;want&nbsp;to&nbsp;apply&nbsp;field&nbsp;of&nbsp;view&nbsp;on.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;coords:&nbsp;contain&nbsp;the&nbsp;parameters&nbsp;of&nbsp;C1,C2,R1,R2,Phase&nbsp;(more&nbsp;info&nbsp;in&nbsp;updatevalues&nbsp;fucntion)<br>
+&nbsp;<br>
+Phase&nbsp;3.<br>
+During&nbsp;this&nbsp;phase&nbsp;we&nbsp;start&nbsp;from&nbsp;the&nbsp;minimum&nbsp;columns&nbsp;(C1,C2)&nbsp;and&nbsp;Min,Max&nbsp;Rows&nbsp;(R1,R2)&nbsp;<br>
+and&nbsp;start&nbsp;changing&nbsp;(R1,R2)&nbsp;toward&nbsp;center&nbsp;till&nbsp;R1==R2&nbsp;then&nbsp;we&nbsp;break&nbsp;(all&nbsp;border&nbsp;got&nbsp;covered)</tt></dd></dl>
+
+<dl><dt><a name="Agent-PrepareFieldofView"><strong>PrepareFieldofView</strong></a>(self)</dt><dd><tt>Calculate&nbsp;Field&nbsp;of&nbsp;View&nbsp;for&nbsp;"self"&nbsp;agent.</tt></dd></dl>
+
+<dl><dt><a name="Agent-RandomAction"><strong>RandomAction</strong></a>(self)</dt><dd><tt>Generate&nbsp;List&nbsp;of&nbsp;Random&nbsp;Actions&nbsp;for&nbsp;Agent</tt></dd></dl>
+
+<dl><dt><a name="Agent-Reset"><strong>Reset</strong></a>(self)</dt><dd><tt>Reset&nbsp;agent&nbsp;information&nbsp;before&nbsp;each&nbsp;step</tt></dd></dl>
+
+<dl><dt><a name="Agent-__init__"><strong>__init__</strong></a>(self, Fname='Pics/agent_W.jpg', Power=1, Range=-1, VisionAngle=90, ControlRange=3, See=True, PdstName=None, EgoCentric=False, Multiplex=1, ActionMemory=0)</dt><dd><tt>Initialize&nbsp;Agent<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Fname:&nbsp;Location&nbsp;of&nbsp;the&nbsp;image&nbsp;'Pics/agent_W.jpg'&nbsp;(shoud&nbsp;be&nbsp;looking&nbsp;to&nbsp;West)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Power:&nbsp;integer&nbsp;represent&nbsp;agent&nbsp;power,&nbsp;the&nbsp;more&nbsp;the&nbsp;stronger.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Range:&nbsp;integer&nbsp;represent&nbsp;Agent&nbsp;sight&nbsp;range.(how&nbsp;far&nbsp;agent&nbsp;can&nbsp;see&nbsp;-1&nbsp;full&nbsp;vision)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;VisionAngle:&nbsp;the&nbsp;angle&nbsp;of&nbsp;agent&nbsp;vision.[1,360]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ControlRange:&nbsp;The&nbsp;distance&nbsp;between&nbsp;agent&nbsp;and&nbsp;(food&nbsp;or&nbsp;other&nbsp;agents)&nbsp;where&nbsp;agent&nbsp;can&nbsp;actually&nbsp;make&nbsp;actions.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;See:&nbsp;True&nbsp;for&nbsp;other&nbsp;agent&nbsp;can&nbsp;see&nbsp;through&nbsp;this&nbsp;agent&nbsp;,&nbsp;False&nbsp;they&nbsp;can't<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;PdstName:(Probability&nbsp;Distribution&nbsp;Name)&nbsp;The&nbsp;name&nbsp;of&nbsp;wanted&nbsp;distribution&nbsp;(name&nbsp;should&nbsp;be&nbsp;linked&nbsp;with&nbsp;Settings.IndiciesOrderTable)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;EgoCentric:&nbsp;Define&nbsp;the&nbsp;vision&nbsp;of&nbsp;the&nbsp;agent&nbsp;(True:&nbsp;Egocentric&nbsp;,&nbsp;False:&nbsp;Centric).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exception:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ValueError&nbsp;Exception:&nbsp;when&nbsp;ControlRange&nbsp;larger&nbsp;than&nbsp;Range<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;IOError&nbsp;Exception&nbsp;:&nbsp;When&nbsp;Fname&nbsp;file&nbsp;doesn't&nbsp;exist<br>
+TODO:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Improve&nbsp;the&nbsp;Field&nbsp;of&nbsp;Vision&nbsp;algorithm&nbsp;to&nbsp;prepare&nbsp;only&nbsp;in&nbsp;(Range)&nbsp;view&nbsp;not&nbsp;everything&nbsp;(but&nbsp;it&nbsp;shold&nbsp;be&nbsp;kept&nbsp;this&nbsp;way&nbsp;if&nbsp;we&nbsp;want&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;change&nbsp;the&nbsp;view&nbsp;in&nbsp;the&nbsp;middle&nbsp;of&nbsp;the&nbsp;game&nbsp;so&nbsp;it's&nbsp;performance&nbsp;vs&nbsp;options&nbsp;availability,&nbsp;although&nbsp;it's&nbsp;not&nbsp;that&nbsp;huge&nbsp;difference&nbsp;in&nbsp;performance.).</tt></dd></dl>
+
+<dl><dt><a name="Agent-push"><strong>push</strong></a>(self, y)</dt><dd><tt>Function&nbsp;to&nbsp;circle&nbsp;over&nbsp;a&nbsp;numpy&nbsp;array&nbsp;and&nbsp;clip&nbsp;the&nbsp;overflow<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:base&nbsp;numpy&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y:&nbsp;numpy&nbsp;array&nbsp;contain&nbsp;elements&nbsp;to&nbsp;be&nbsp;added.</tt></dd></dl>
+
+<dl><dt><a name="Agent-pushF"><strong>pushF</strong></a>(self, y)</dt></dl>
+
+<dl><dt><a name="Agent-updatevalues"><strong>updatevalues</strong></a>(self, array, elementsCount)</dt><dd><tt>Update&nbsp;Array&nbsp;boundary&nbsp;values&nbsp;depending&nbsp;on&nbsp;elementsCount&nbsp;which&nbsp;determine&nbsp;how&nbsp;many&nbsp;values&nbsp;from&nbsp;the&nbsp;boundary&nbsp;should&nbsp;be&nbsp;changed-<br>
+starting&nbsp;from&nbsp;center&nbsp;middle&nbsp;point&nbsp;to&nbsp;the&nbsp;right.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;array:&nbsp;N-diminesion&nbsp;array&nbsp;to&nbsp;change&nbsp;it's&nbsp;boundaries.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elementsCount:&nbsp;number&nbsp;of&nbsp;elements&nbsp;that&nbsp;we&nbsp;need&nbsp;to&nbsp;change&nbsp;in&nbsp;the&nbsp;array&nbsp;boundary.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Agent-GetCenterCoords"><strong>GetCenterCoords</strong></a>(shape)</dt><dd><tt>Function&nbsp;to&nbsp;calculate&nbsp;the&nbsp;center&nbsp;of&nbsp;the&nbsp;array<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;shape:&nbsp;the&nbsp;array&nbsp;shape<br>
+Return&nbsp;:&nbsp;(x,y)&nbsp;for&nbsp;the&nbsp;center&nbsp;coordinates.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table>
+</body></html>

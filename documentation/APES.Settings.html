@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: class Settings</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>APES.Settings</strong> = <a name="APES.Settings">class Settings</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Settings&nbsp;class&nbsp;to&nbsp;handle&nbsp;shared&nbsp;data<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Images:&nbsp;dictionary&nbsp;link&nbsp;image&nbsp;name&nbsp;'Wall'&nbsp;to&nbsp;image&nbsp;picture<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Agents:&nbsp;Agent&nbsp;ID&nbsp;counter&nbsp;start&nbsp;from&nbsp;1000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Food:&nbsp;Food&nbsp;ID&nbsp;counter&nbsp;start&nbsp;from&nbsp;2000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Obstacles:&nbsp;Obstacles&nbsp;ID&nbsp;counter&nbsp;start&nbsp;from&nbsp;3000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;BlockSize:&nbsp;define&nbsp;how&nbsp;many&nbsp;pixles&nbsp;for&nbsp;block&nbsp;images&nbsp;sizes,&nbsp;images&nbsp;like&nbsp;(food,obstacles,blank,unob,agents&nbsp;,&nbsp;etc..),&nbsp;example&nbsp;(50,50)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;WorldSize:&nbsp;define&nbsp;how&nbsp;many&nbsp;blocks&nbsp;in&nbsp;the&nbsp;world&nbsp;(10,10)-&gt;&nbsp;100&nbsp;block<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;FigureSize:&nbsp;define&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;images&nbsp;outputed.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ProbabilitiesTable:&nbsp;Dictionary&nbsp;(Key:name,Value:Probability&nbsp;distribution&nbsp;numpy&nbsp;array).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;PossibleActions:&nbsp;numpy&nbsp;array&nbsp;contain&nbsp;all&nbsp;possible&nbsp;actions&nbsp;for&nbsp;agent.(Could&nbsp;be&nbsp;modified&nbsp;to&nbsp;represent&nbsp;customized&nbsp;set&nbsp;of&nbsp;actions)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Static methods defined here:<br>
+<dl><dt><a name="Settings-AddImage"><strong>AddImage</strong></a>(Key, Fname)</dt><dd><tt>Add&nbsp;Image&nbsp;to&nbsp;Images&nbsp;dictionary<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Key:&nbsp;Dictionary&nbsp;name&nbsp;for&nbsp;the&nbsp;image<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Fname:&nbsp;File&nbsp;Directory&nbsp;to&nbsp;the&nbsp;image&nbsp;Example:&nbsp;'Pics/wall.jpg'<br>
+Exception:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;IOError:&nbsp;if&nbsp;file&nbsp;doesn't&nbsp;exist<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Settings.<a href="#APES.Settings-AddImage">AddImage</a>('Wall','Pics/wall.jpg')</tt></dd></dl>
+
+<dl><dt><a name="Settings-AddProbabilityDistribution"><strong>AddProbabilityDistribution</strong></a>(Name, IntProbabilityDst)</dt><dd><tt>Convert&nbsp;Integerwise&nbsp;distribution&nbsp;array&nbsp;to&nbsp;indicies&nbsp;&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Name:&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;distribution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;IntProbabilityDst:&nbsp;Integer&nbsp;array&nbsp;[0....+inf]&nbsp;of&nbsp;the&nbsp;world&nbsp;size,&nbsp;Used&nbsp;to&nbsp;generate&nbsp;Probability&nbsp;matrix</tt></dd></dl>
+
+<dl><dt><a name="Settings-GetAgentID"><strong>GetAgentID</strong></a>()</dt><dd><tt>staticmethod&nbsp;to&nbsp;get&nbsp;unique&nbsp;agent&nbsp;ID<br>
+Return:&nbsp;integer&nbsp;for&nbsp;Agents</tt></dd></dl>
+
+<dl><dt><a name="Settings-GetFoodID"><strong>GetFoodID</strong></a>()</dt><dd><tt>staticmethod&nbsp;to&nbsp;get&nbsp;unique&nbsp;Food&nbsp;ID<br>
+Return:&nbsp;integer&nbsp;for&nbsp;Foods</tt></dd></dl>
+
+<dl><dt><a name="Settings-GetObstaclesID"><strong>GetObstaclesID</strong></a>()</dt><dd><tt>staticmethod&nbsp;to&nbsp;get&nbsp;unique&nbsp;obstacle&nbsp;ID<br>
+Return:&nbsp;integer&nbsp;for&nbsp;obstalces</tt></dd></dl>
+
+<dl><dt><a name="Settings-ImageViewer"><strong>ImageViewer</strong></a>(image)</dt><dd><tt>Convert&nbsp;image&nbsp;from&nbsp;BGR&nbsp;to&nbsp;RGB&nbsp;colors<br>
+Return:&nbsp;RGB&nbsp;image</tt></dd></dl>
+
+<dl><dt><a name="Settings-SetBlockSize"><strong>SetBlockSize</strong></a>(Newsize)</dt><dd><tt>Set&nbsp;new&nbsp;block&nbsp;size&nbsp;in&nbsp;the&nbsp;Settings<br>
+Args&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Newsize:&nbsp;integer&nbsp;for&nbsp;block&nbsp;new&nbsp;size.&nbsp;(block&nbsp;can&nbsp;only&nbsp;be&nbsp;square&nbsp;not&nbsp;rectangle).<br>
+Exception:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;AssertionError:&nbsp;if&nbsp;Newsize&nbsp;is&nbsp;not&nbsp;integer&nbsp;or&nbsp;less&nbsp;or&nbsp;equal&nbsp;0</tt></dd></dl>
+
+<dl><dt><a name="Settings-SetWorldSize"><strong>SetWorldSize</strong></a>(x, y)</dt><dd><tt>Update&nbsp;world&nbsp;Size<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;newsize:&nbsp;the&nbsp;new&nbsp;world&nbsp;size,&nbsp;example&nbsp;:&nbsp;<a href="#APES.Settings-SetWorldSize">SetWorldSize</a>((20,20))</tt></dd></dl>
+
+<dl><dt><a name="Settings-ani_frame"><strong>ani_frame</strong></a>(rimages=[], fps=60, dpi=100, name='demo')</dt><dd><tt>Create&nbsp;Videom&nbsp;from&nbsp;list&nbsp;of&nbsp;images<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;rimages:&nbsp;list&nbsp;of&nbsp;images<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;fps:&nbsp;Frame&nbsp;Per&nbsp;Second&nbsp;(image&nbsp;per&nbsp;second)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;dpi:&nbsp;dot&nbsp;per&nbsp;pixel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;name:&nbsp;File&nbsp;name&nbsp;looks&nbsp;like&nbsp;&nbsp;Name_fps:2_DPI:100_YYYY-MM-DD-HH:MM:SS.mp4</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>Agents</strong> = 1000</dl>
+
+<dl><dt><strong>AllPossibleActions</strong> = array([['R', 'L'],
+       ['R', 'R'],
+       ['L...     ['M', 'E'],
+       ['M', 'W']], dtype='&lt;U1')</dl>
+
+<dl><dt><strong>BlockSize</strong> = (100, 100)</dl>
+
+<dl><dt><strong>FigureSize</strong> = (10, 10)</dl>
+
+<dl><dt><strong>Food</strong> = 2000</dl>
+
+<dl><dt><strong>Images</strong> = {-1: array([[[0, 0, 0],
+        [0, 0, 0],
+        [0...0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]]]), 0: array([[[1, 1, 1],
+        [1, 1, 1],
+        [1...1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]]])}</dl>
+
+<dl><dt><strong>Obstacles</strong> = 3000</dl>
+
+<dl><dt><strong>PossibleActions</strong> = array([list([['L', 'N'], ['M', 'N']]), list([['L...'], ['M', 'E']]),
+       list([])], dtype=object)</dl>
+
+<dl><dt><strong>ProbabilitiesTable</strong> = {}</dl>
+
+<dl><dt><strong>WorldSize</strong> = (11, 11)</dl>
+
+</td></tr></table>
+</body></html>
