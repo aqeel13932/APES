@@ -31,7 +31,7 @@ class Agent:
         * IV:Incremental Vision, Each step the unseen only will be updated.(used in DetectAndAstar function (2d numpy array).
         * ndirection: link between (Agent location- next point) and the next action
 """
-    def __init__(self,Fname='Pics/agent_W.jpg',Power=1,Range=-1,VisionAngle=90,ControlRange=3,See=True,PdstName=None,EgoCentric=False,Multiplex=1,ActionMemory=0):
+    def __init__(self,Fname='Pics/blue.jpg',Power=1,Range=-1,VisionAngle=90,ControlRange=3,See=True,PdstName=None,EgoCentric=False,Multiplex=1,ActionMemory=0):
         """Initialize Agent
         Args:
             * Fname: Location of the image 'Pics/agent_W.jpg' (shoud be looking to West)
