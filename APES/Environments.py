@@ -5,8 +5,8 @@ from .Obstacles import *
 from .Foods import *
 from time import time
 from pathlib import Path
-filename = Path("Pics/blue.jpg")
-print(filename.exists())
+import os
+
 def CreateEnvironment(preference,ActionMemory=0,max_timesteps=1000,rwrdschem=[-10,1000,-0.1],svision=180):
     Settings.Agents=1000
     Settings.Food=2000
@@ -15,8 +15,8 @@ def CreateEnvironment(preference,ActionMemory=0,max_timesteps=1000,rwrdschem=[-1
 
     #Add Pictures
     Settings.SetBlockSize(100)
-    Settings.AddImage('Wall',os.path.abspath("Pics/blue.jpg"))#'Pics/wall.jpg')
-    Settings.AddImage('Food','Pics/food.jpg')
+    Settings.AddImage('Wall',os.path.abspath("APES/Pics/wall.jpg"))#'Pics/wall.jpg')
+    Settings.AddImage('Food','APES/Pics/food.jpg')
 
     #Specify World Size
     Settings.WorldSize=(11,11)
@@ -35,10 +35,8 @@ def CreateEnvironment(preference,ActionMemory=0,max_timesteps=1000,rwrdschem=[-1
     food[preference['food']]=1
     Settings.AddProbabilityDistribution('ragnt',ragnt)
     Settings.AddProbabilityDistribution('gagnt',gagnt)
-    ragnt = Agent(Fname='Pics/red.jpg',Power=3,VisionAngle=svision,Range=-1,PdstName='ragnt',ActionMemory=ActionMemory)
-    gagnt = Agent(Fname='Pics/blue.jpg',Power=10,VisionAngle=180,Range=-1,ControlRange=1,PdstName='gagnt')
-    ragnt.Direction=preference['subdir']
-    gagnt.Direction=preference['domdir']
+    ragnt = Agent(Fname='APES/Pics/red.jpg',Power=3,VisionAngle=svision,Range=-1,PdstName='ragnt',ActionMemory=ActionMemory)
+    gagnt = Agent(Fname='APES/Pics/blue.jpg',Power=10,VisionAngle=180,Range=-1,ControlRange=1,PdstName='gagnt')
         
     #Add Probabilities to Settings
     if preference['obs']!=(0,0):
@@ -60,4 +58,6 @@ def CreateEnvironment(preference,ActionMemory=0,max_timesteps=1000,rwrdschem=[-1
     #print ('Taken:',Start)
     preference['Taken']=Start
     game.GenerateWorld()
+    ragnt.Direction=preference['subdir']
+    gagnt.Direction=preference['domdir']
     return game
