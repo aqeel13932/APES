@@ -32,5 +32,5 @@ If our environment was helpful for you and you want to cite our paper:
 
 TODO
 ====
-1. Use parallaize FOV_Calculator for better performance (pull requests are welcome :) ).
+1. Parallelize FOV_Calculator for better performance (pull requests are welcome :) ).
 2. Improve the documentation.
