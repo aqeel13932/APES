@@ -110,6 +110,6 @@ class FOV_SC(object):
         self.light[y,x]=1
         "Calculate lit squares from the given location and radius"
         for oct in range(8):
-            self._cast_light(x, y, 1, 1.0, 0.0,max(self.data.shape)+2,
+            self._cast_light(x, y, 1, 1.0, 0.0,max(self.data.shape)+3,
                              self.mult[0][oct], self.mult[1][oct],
                              self.mult[2][oct], self.mult[3][oct], 0)
