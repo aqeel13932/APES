@@ -1,7 +1,7 @@
 # Artificial Primate Environment Simulator (APES)
 APES is a grid world environment with ability for partial observability. It could be used for multi-agent experiments. Its uniqueness is coming from the wide options for vision for every agent.
 
-To read more information about the environment please visit : [Arxiv link coming soon](https://www.arxiv.org "Arxiv")
+To read more information about the environment please visit : [Arxiv link coming soon](https://arxiv.org/abs/1808.10692)
 ## Installation
 To install the environment we suggest to use conda. In Linux you can see the following steps:
 ```
