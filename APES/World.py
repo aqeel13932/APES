@@ -66,6 +66,28 @@ class World:
             self.StepsLimit= StepsLimit
             self.Limited=True
         self.StepCounter=0
+        #Same direction
+        self.ego_map = dict.fromkeys([('N','N'),('W','W'),('S','S'),('E','E')],np.array([1,0,0,0]))
+        #Oppesite direction
+        self.ego_map.update(dict.fromkeys([('N','S'),('S','N'),('E','W'),('W','E')],np.array([0,1,0,0])))
+        #Looking left
+        self.ego_map.update(dict.fromkeys([('N','W'),('S','E'),('E','N'),('W','S')],np.array([0,0,1,0])))
+        #Looking right
+        self.ego_map.update(dict.fromkeys([('N','E'),('S','W'),('E','S'),('W','N')],np.array([0,0,0,1])))
+
+    def Ego_centric_array(self,direction,array):
+        """ Rotate the array to match an ego-centric agent.
+        direction: the agent current direction.
+        array: the agent map of the world.
+        """
+        if direction=='E':
+            return np.rot90(array)
+        elif direction=='S':
+            return np.rot90(array,2)
+        elif direction=='W':
+            return np.rot90(array,3)
+        else:
+            return array
     def AddAgents(self,agents):
         """Add List of Agents to the world
         Args:
@@ -280,6 +302,9 @@ class World:
             for column in range(array.shape[1]):
                 cells.append(self.GetElementImage(array[row,column]))
             totalrows.append(np.concatenate(cells,axis=1))
+        
+        if self.agents[ID].EgoCentric:
+            return self.Ego_centric_array(self.agents[ID].Direction,np.concatenate(totalrows,axis=0))
         return np.concatenate(totalrows,axis=0)
     
     def _GetAgentMap(self,ID):
@@ -602,13 +627,18 @@ class World:
         #Used Ordered here so the output keys will be always in the same manner in case the values
         # feed to some network they will always be in same order.
         ls = OrderedDict()
-
+        if agents[ID].EgoCentric:
+            array = self.Ego_centric_array(agents[ID].Direction,array)
         #observed (True)/unobeserved(False) layer
         ls['observed']= (array!=-1)
 
         #My Place
         ls['mypos']= (array==ID)
-        ls['myori']= _agentdirection( agents[ID].Direction)
+        # in case of ego centric my orientation is not needed (alwasy looking forward).
+        if agents[ID].EgoCentric:
+            ls['myori']=[] 
+        else:
+            ls['myori']= _agentdirection( agents[ID].Direction)
         ls['obstacles'] = (array>3000)
         ls['food'] = np.logical_and(array>2000,array<3001)
         #Get list of only observed agents.
@@ -618,7 +648,11 @@ class World:
                 continue
             if oID in observedagents:
                 ls['agentpos{}'.format(oID)]= (array==oID)
-                ls['agentori{}'.format(oID)]= _agentdirection(agents[oID].Direction)
+                if agents[ID].EgoCentric:
+                    ls['agentori{}'.format(oID)]= self.ego_map[(agents[ID].Direction,agents[oID].Direction)]
+                else:
+                    ls['agentori{}'.format(oID)]= _agentdirection(agents[oID].Direction)
+                
             else:
                 ls['agentpos{}'.format(oID)]= np.zeros(array.shape,dtype=bool)# (array==oID)
                 ls['agentori{}'.format(oID)]=np.array([0,0,0,0],dtype=bool)
